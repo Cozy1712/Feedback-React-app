@@ -156,7 +156,9 @@ input:focus {
 }
 
 .btn-primary {
-  background-color: #202142;
+  background-color: darkgreen;
+  font-size: 16px;
+  color: #f4f4f4;
 }
 
 .btn-secondary {
