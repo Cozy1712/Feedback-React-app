@@ -1,21 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Card from '../shared/Card'
 
 function ContactPage() {
   return (
-    <div>
-        <form style={{textAlign:"center"}}>
-          <input type="text" name='name' placeholder='Name' style={{
-            width:"500px", height:"50px", margin:"20px", borderRadius:"10px", border:"6px solid skyblue", fontWeight:"bold",padding:"3px"}}/>
-            <br/>
-          <input type="email"name='email' placeholder='Email'style={{
-            width:"500px", height:"50px", margin:"20px", borderRadius:"10px", border:"6px solid skyblue", fontWeight:"bold",padding:"3px"}} />
-            <br/>
-          <textarea name="msg" id="msg" placeholder="Message Here"style={{
-            width:"500px", height:"100px", margin:"20px", borderRadius:"10px", border:"6px solid skyblue", fontWeight:"bold",padding:"3px"}}></textarea><br /><br />
-            <button type="submit" style={{
-            width:"100px", height:"50px", margin:"20px", borderRadius:"10px", border:"2px solid skyblue", fontWeight:"bold",padding:"3px",backgroundColor:"darkgreen" ,cursor:"pointer"}} >Send</button>
-            
+    <Card>
+        <form >
+          <div className='input-group'>
+             <input type="text" name='name' placeholder='Name' style={{
+             height:"50px", borderRadius:"10px", border:"3px solid skyblue", fontWeight:"bold",padding:"3px"}}/>
+            </div><br />
+            <div  className='input-group'>
+              <input type="email"name='email' placeholder='Email'style={{
+              height:"50px", borderRadius:"10px", border:"3px solid skyblue", fontWeight:"bold",padding:"3px"}}></input>
+             </div><br />
+             <div  className='input-group'>
+                <textarea name="text" id="msg" cols="100" rows="10"style={{
+               borderRadius:"10px", border:"3px solid skyblue", fontWeight:"bold",padding:"3px"}}></textarea>
+             </div><br />
+             <div className='message'>
+                <button type="submit" style={{ width:"70px",
+                height:"40px", borderRadius:"10px", border:"2px solid skyblue", fontWeight:"bold",padding:"3px",backgroundColor:"darkgreen" ,justifyContent:"centre", cursor:"pointer"}} >Send</button>
+            </div>
           
 
         </form>
@@ -24,7 +30,7 @@ function ContactPage() {
             color:"skyblue", textDecoration:"none", padding:"10px", margin:"20px"
           }}>Back to home </Link>
         </p>
-    </div>
+    </Card>
   )
 }
 
