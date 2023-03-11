@@ -186,6 +186,12 @@ input:focus {
   text-align: center;
   color: rebeccapurple;
 }
+.ctn{
+  width: 500px;
+  border-radius: 5px;
+  padding: 20px;
+  height: 50px;
+}
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
  * document */

@@ -1,4 +1,5 @@
 import React from 'react'
+import RatingSelect from './RatingSelect'
 import Card from '../shared/Card'
 import Button from '../shared/Button'
 import { useState } from 'react'
@@ -6,23 +7,26 @@ import { useState } from 'react'
 
 
 
-function FeedbackForm() {
+function FeedbackForm({handleAdd}) {
 
 /// text input using use state hook 
     const [text, setTest] = useState('')
-// to disable send button
+//state to disable send button
 const [btnDisabled, setBtnDisabled] = useState(true)
-// message that display
+// state message that display
 const [message, setMessage] = useState('')
+// state for rating
+const  [ rating, setRating] = useState(10)
 
 
 
     const handleTextchange = (e) =>{
-/////validation
+/////validation to run whenever we type something in 
         if (text === '') {
           setBtnDisabled(true)
-          setMessage(null)
+          setMessage(null) 
         }else if(text !== '' && text.trim().length <= 10){
+          setMessage('Text must be up to 10 characters😝 ')//Realtime error checking 
           setBtnDisabled(true)
         } else{
           setMessage(null)
@@ -31,13 +35,28 @@ const [message, setMessage] = useState('')
 
         setTest(e.target.value) 
     }
+
+    // declaring the handlesubmit
+    const handleSubmit = (e) =>{
+      //prevent the default element/number 10 from submitting 
+      e.preventDefault()
+      if (text.trim ().length > 10){
+        const newFeedback ={ text, rating}
+
+       handleAdd(newFeedback)
+         /////////////// when submitted text goes away 
+        setTest('')
+      }
+    }
   return (
     <Card>
-        <form> 
+
+        <form onSubmit={handleSubmit}> {/*creating an event handler for submitting the form which is onSubmit  */}
             <h2>How Would You Rate Us❓</h2> 
             <br/>
 
             {/* @todo -rating select component */}
+            < RatingSelect select={(rating) => setRating(rating)}/>
 
             <div className='input-group'>
             <input

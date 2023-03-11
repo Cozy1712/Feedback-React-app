@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 
 function FeedbackList( {feedback, handleDelete} ) {
-    if(!feedback || feedback.length === 0){
+    if(!feedback || feedback.length === 0){ 
         return <p>No feedback yet❕</p>
     }
   return (

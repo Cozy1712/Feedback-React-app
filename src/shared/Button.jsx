@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 ///button will take some props like children
 function Button({childern, version, type, isDisabled}) {
   return (
-    <button type={type} disabled={isDisabled} className={`btn btn-${version}`}> {childern}
+    <button type={type} disabled={isDisabled} className={`btn btn-${version}`}> 
+      {childern}
     </button>
   
     
