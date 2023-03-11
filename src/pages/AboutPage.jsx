@@ -9,9 +9,9 @@ function AboutPage() {
         <h1>About This Project</h1>
         <p>This is a react app to leave feedback for a product or service</p>
         <p> version: 1.0.0</p>
-        <p><Link to = '/contact'>Contact Us </Link></p>
+        <p><Link to = '/contact' style={{textDecoration:"none"}}>Contact Us </Link></p>
         <p>
-          <Link to = '/'>Back to home </Link>
+          <Link to = '/' style={{textDecoration:"none"}}>Back to home </Link>
         </p>
        </div>
     </Card>

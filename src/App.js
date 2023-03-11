@@ -12,8 +12,10 @@ import FeedbackData from './components/data/FeedbackData'
 import FeedbackForm from './components/FeedbackForm'
 import FeedbackStats from './components/FeedbackStats'
 import AboutIconLink from './components/AboutIconLink'
+import ContactPageLink from './components/ContactPageLink'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+
 
 
 function App() {
@@ -45,11 +47,13 @@ function App() {
                     <FeedbackForm handleAdd={addFeedback}/>
                     <FeedbackStats feedback={feedback}/>
                     <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+                    <ContactPageLink/>
                     </>
                 }
                 ></Route>
                 <Route path="/about" element={<AboutPage/>}></Route>
                 <Route path="/contact" element={<ContactPage/>}></Route>
+
               </Routes>
                  <AboutIconLink/> 
                 
