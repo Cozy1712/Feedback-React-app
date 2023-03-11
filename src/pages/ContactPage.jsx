@@ -15,7 +15,7 @@ function ContactPage() {
               height:"50px", borderRadius:"10px", border:"3px solid skyblue", fontWeight:"bold",padding:"3px"}}></input>
              </div><br />
              <div  className='input-group'>
-                <textarea name="text" id="msg" cols="100" rows="10"style={{
+                <textarea name="text" id="msg" cols="100" rows="10" placeholder=" Enter Your Message Here"style={{
                borderRadius:"10px", border:"3px solid skyblue", fontWeight:"bold",padding:"3px"}}></textarea>
              </div><br />
              <div className='message'>
