@@ -12,7 +12,7 @@ function Button({childern, version, type, isDisabled}) {
 }
 
 Button.defaultProps = {
-    version: 'primary',
+    version: 'secondary',
     type: 'button',
     isDisabled: false,
 } 
