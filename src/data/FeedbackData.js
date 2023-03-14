@@ -6,12 +6,12 @@ const FeedbackData = [
   },
   {
     id: 2,
-    rating: 5,
+    rating: 6,
     text: 'this app is great 😀👍👍👌👌',
   },
   {
     id: 3,
-    rating: 6,
+    rating: 5,
     text: 'this  is not bad 👎😶😶😶 ',
   },
 ]

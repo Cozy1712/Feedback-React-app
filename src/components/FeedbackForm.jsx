@@ -3,11 +3,14 @@ import RatingSelect from './RatingSelect'
 import Card from '../shared/Card'
 import Button from '../shared/Button'
 import { useState } from 'react'
+import { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
 
 
 
-function FeedbackForm({handleAdd}) {
+function FeedbackForm() {
+  const {addFeedback} = useContext(FeedbackContext)
 
 /// text input using use state hook 
     const [text, setTest] = useState('')
@@ -43,7 +46,7 @@ const  [ rating, setRating] = useState(10)
       if (text.trim ().length > 10){
         const newFeedback ={ text, rating}
 
-       handleAdd(newFeedback)
+       addFeedback(newFeedback)
          /////////////// when submitted text goes away 
         setTest('')
       }
@@ -63,7 +66,10 @@ const  [ rating, setRating] = useState(10)
              onChange={handleTextchange}
              type='text' placeholder='Rate us here⭐⭐⭐❕'
              value={text}/>
-             <Button type='submit' isDisabled={btnDisabled}>SEND</Button>
+             <Button type='submit' isDisabled={btnDisabled}>
+               SEND 
+              </Button>
+
             </div>
 
             {message && <div className='message'>{message}</div>}

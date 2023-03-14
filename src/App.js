@@ -1,5 +1,5 @@
-import {useState} from 'react'
-import { v4 as uuidv4 } from 'uuid'
+// import {useState} from 'react'
+// import { v4 as uuidv4 } from 'uuid'
 ///for routing
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 //-----import component files-------
 import Header from './components/Header'
 import FeedbackList from './components/FeedbackList'
-import FeedbackData from './components/data/FeedbackData'
+// import FeedbackData from './data/FeedbackData'
 import FeedbackForm from './components/FeedbackForm'
 import FeedbackStats from './components/FeedbackStats'
 import AboutIconLink from './components/AboutIconLink'
@@ -16,27 +16,30 @@ import ContactPageLink from './components/ContactPageLink'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 
+import { FeedbackProvider } from './context/FeedbackContext'
+
 
 
 function App() {
      // global state 
-     const [feedback,setFeedback] = useState(FeedbackData)
+    //  const [feedback,setFeedback] = useState(FeedbackData)
 
-////////////////////////////////////////////////
-    const deleteFeedback = (id) => {
-        if(window.confirm('Are you sure you want to delete❓'))
-        {
-         setFeedback(feedback.filter((item) => item.id !==id))   
-        }
-    }
+// //////////////////////////////////delete feedback//////////////
+//     const deleteFeedback = (id) => {
+//         if(window.confirm('Are you sure you want to delete❓'))
+//         {
+//          setFeedback(feedback.filter((item) => item.id !==id))   
+//         }
+//     }
    
-//////////////////////////////////////////////for the submit addfeedback
-    const addFeedback =(newFeedback) => {
-        newFeedback.id = uuidv4()
-        setFeedback([newFeedback,...feedback])// to add the new comment to app level state/global
+// //////////////////////////////////////////////for the submit addfeedback
+//     const addFeedback =(newFeedback) => {
+//         newFeedback.id = uuidv4()
+//         setFeedback([newFeedback,...feedback])// to add the new comment to app level state/global
  
-    }
+//     }
     return( 
+    <FeedbackProvider>
         <Router>
             <Header/>
             <div className='container'>
@@ -44,9 +47,9 @@ function App() {
                 <Route exact path="/" 
                 element={
                     <>
-                    <FeedbackForm handleAdd={addFeedback}/>
-                    <FeedbackStats feedback={feedback}/>
-                    <FeedbackList feedback={feedback} handleDelete={deleteFeedback}/>
+                    <FeedbackForm />
+                    <FeedbackStats />
+                    <FeedbackList />
                     <ContactPageLink/>
                     </>
                 }
@@ -60,6 +63,7 @@ function App() {
             </div>
              
         </Router>
+    </FeedbackProvider>
     )
 }
 
