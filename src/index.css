@@ -108,6 +108,46 @@ header {
   border-radius: 8px;
 }
 
+/*-----------------------contactform begin---------------------------*/
+.input-contactpage button{
+  cursor: pointer;
+  background-color: darkgreen;
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
+  width: 70px;
+  height: 40px;
+  flex-direction: row;
+  outline: none;
+  display: flex;
+  border: 2px solid skyblue;
+  border-radius: 10px;
+
+  margin: 10px auto 0;
+ 
+ 
+
+}
+.input-contactpage input, textarea{
+  margin: 10px auto 0;
+  padding: 15px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid skyblue;
+  border-radius: 10px;
+  outline: none;
+
+}
+.contact-link{
+  text-decoration: none;
+  color: skyblue;
+  padding: 10px;
+  margin: 20px;
+}
+/*---------------------------contactform end------------------------------*/
+
+
 input {
   flex-grow: 2;
   border: none;
@@ -227,6 +267,10 @@ input:focus {
   }
 
   .input-group input {
+    width: 80%;
+  }
+
+  .input-contactpage input, textarea, button{
     width: 80%;
   }
 }
